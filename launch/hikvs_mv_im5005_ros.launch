@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<launch>
+    <arg name="sensor_ip_1" default="192.168.0.20"/>
+    <arg name="sensor_port_1" default="7777"/>
+    <arg name="frequency_1" default="50.0"/>
+
+    <node pkg="hikvs_mv_im5005_ros" type="hikvs_mv_im5005_ros_node" name="hikvs_mv_im5005_ros_node_1" respawn="false" output="screen" >
+    <param name="sensor_ip" value="$(arg sensor_ip_1)"/>
+    <param name="sensor_port" value="$(arg sensor_port_1)"/>
+    <param name="frequency" value="$(arg frequency_1)"/>
+    <remap from="hikvs_qr_feedback" to="hikvs_qr_feedback_1"/>
+    </node>
+
+    <!-- <arg name="sensor_ip_2" default="192.168.0.21"/>
+    <arg name="sensor_port_2" default="7778"/>
+    <arg name="frequency_2" default="50.0"/>
+
+    <node pkg="hikvs_mv_im5005_ros" type="hikvs_mv_im5005_ros_node" name="hikvs_mv_im5005_ros_node_2" respawn="false" output="screen" >
+    <param name="sensor_ip" value="$(arg sensor_ip_2)"/>
+    <param name="sensor_port" value="$(arg sensor_port_2)"/>
+    <param name="frequency" value="$(arg frequency_2)"/>
+    <remap from="hikvs_qr_feedback" to="hikvs_qr_feedback_2"/>
+    </node> -->
+</launch>
+
+
